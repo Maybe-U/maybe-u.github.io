@@ -148,6 +148,7 @@
 
                     <!-- Main Post Content -->
                     <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>部门切换到jumpserver来管理服务器，并且打开了MFA两步验证这个强制选项，意味着登入的时候需要登入密码，之后还有登入MFA验证码，这样导致我在登入服务器的时候非常麻烦，</p>
+<p>更新一下</p>
 <p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/79960ffa-2be5-4c44-8194-fd0350afb832/760829ea-d1d1-498e-aaf1-eb788f17b123/Untitled.png" alt="Untitled"></p>
 <p>并且我是通过vscode远程开发+手机热点远程办公，经常手机掉线就要重连，非常麻烦。</p>
 <h1 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h1><p>MFA验证码我已经通过 <code>oathtool --totp --base32</code>  工具加秘钥计算出来，之前一直是通过别名的方式计算该值然后填充到命令行，但是一天要输入好几十次。</p>
