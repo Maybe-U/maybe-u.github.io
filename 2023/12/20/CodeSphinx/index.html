@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="blog for CodeSphinx">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="CodeSphinx">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="CodeSphinx"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="blog for CodeSphinx" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>CodeSphinx - Hexo</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Hexo">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="Hexo">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/tags" 
+                    title="Tags">
+                    Tags
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/categories" 
+                    title="Categories">
+                    Categories
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">CodeSphinx</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2023-12-20</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+
+                    <!-- Main Post Content -->
+                    <h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>部门切换到jumpserver来管理服务器，并且打开了MFA两步验证这个强制选项，意味着登入的时候需要登入密码，之后还有登入MFA验证码，这样导致我在登入服务器的时候非常麻烦，</p>
+<p><img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/79960ffa-2be5-4c44-8194-fd0350afb832/760829ea-d1d1-498e-aaf1-eb788f17b123/Untitled.png" alt="Untitled"></p>
+<p>并且我是通过vscode远程开发+手机热点远程办公，经常手机掉线就要重连，非常麻烦。</p>
+<h1 id="解决过程"><a href="#解决过程" class="headerlink" title="解决过程"></a>解决过程</h1><p>MFA验证码我已经通过 <code>oathtool --totp --base32</code>  工具加秘钥计算出来，之前一直是通过别名的方式计算该值然后填充到命令行，但是一天要输入好几十次。</p>
+<p>今天试了一下通过expect 来解决这个问题，主要目标是写一个expect脚本参数就是ssh 正常登入的参数，expect 捕获参数自动填充验证码。</p>
+<p>具体代码如下：</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">#!<span class="regexp">/usr/</span>bin/expect</span><br><span class="line"></span><br><span class="line"># 获取所有参数</span><br><span class="line">set args [join $argv <span class="string">&quot; &quot;</span>]</span><br><span class="line"></span><br><span class="line"># 构建<span class="variable constant_">SSH</span>命令字符串</span><br><span class="line">set ssh_command <span class="string">&quot;/usr/bin/ssh&quot;</span></span><br><span class="line"># 打印<span class="variable constant_">SSH</span>命令</span><br><span class="line">puts <span class="string">&quot;SSH Command: $ssh_command&quot;</span></span><br><span class="line"></span><br><span class="line">set command <span class="string">&quot;oathtool --totp --base32 &#x27;*****&#x27;&quot;</span></span><br><span class="line">set fa [exec sh -c $command]</span><br><span class="line"></span><br><span class="line">spawn $ssh_command $args</span><br><span class="line"></span><br><span class="line">expect &#123;</span><br><span class="line">    <span class="string">&quot;OTP Code&quot;</span> &#123;</span><br><span class="line">        send <span class="string">&quot;$fa\r&quot;</span></span><br><span class="line">        interact</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="string">&quot;Last login:&quot;</span> &#123;</span><br><span class="line">        interact</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+<p>执行这行代码的时候<code>spawn $ssh_command $args</code> 如果填写一个参数就没问题，</p>
+<p>如脚本的名称是ssh.exp  那么执行 ssh.exp ip1 or  ssh.exp -V 都是没问题的，但是多加几个参数如 <code>ssh.exp -v -V -s</code> 就会报<code>expect: illegal option -- V</code></p>
+<p>看了下man spawn 是这样调用的<code>spawn [args] program [args]</code> 应该是在执行的时候把<code>-v -V -s</code> 当成一整个参数传递进去了。</p>
+<p>查找了往上相关的资料和文档，都没有找到对应的答案，后来通过gpt找到了通过参数扩展的语法可以实现参数的扩展。</p>
+<p>最终的语法是：<code>spawn $ssh_command &#123;*&#125;$args</code></p>
+<p>这段是gpt的解释：</p>
+<p><strong><code>&#123;*&#125;</code></strong> 是在Tcl语言中的一个特殊语法，用于展开一个列表并将其元素作为多个参数传递给一个命令。</p>
+<p>在Expect脚本中，Tcl是一种解释性语言，而Expect是Tcl的扩展，因此它继承了Tcl的特性。**<code>&#123;*&#125;</code>** 用于将列表的元素展开，以便能够正确传递给接受多个参数的命令。</p>
+<p>gpt真的好用。</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>最终是实现了脚本自动登入的过程，然而参数扩展这个语法是真的难找，往上的资料都很少，文档也少，也可能是我查找的关键词不够准确。</p>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://tachyons.io/img/avatar_1.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="CodeSphinx">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is Jonathan Klughertz and this is my blog.<br>I am a full stack software engineer with a strong front-end focus.<br> I currently live and work in Singapore, hit me up if you are in the region.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2023/12/20/CodeSphinx/">CodeSphinx</a>
+        </p>
+    
+        <p>
+            <a href="/2023/12/20/post/">post</a>
+        </p>
+    
+        <p>
+            <a href="/2021/01/17/hello-world/">Hello World</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/Maybe-U" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/Maybe-U" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/Maybe-U" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design By  CodeSphinx </a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
