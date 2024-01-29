@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="blog for CodeSphinx">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="CodeSphinx">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="firt_pr"/>
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="blog for CodeSphinx" />
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="Hexo"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>firt_pr - Hexo</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- Google Analytics -->
+    
+
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Hexo">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="Hexo">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/tags" 
+                    title="Tags">
+                    Tags
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/categories" 
+                    title="Categories">
+                    Categories
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">firt_pr</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2024-01-29</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-file-text-o"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+
+                    <!-- Main Post Content -->
+                    <h1 id="提交第一个PR"><a href="#提交第一个PR" class="headerlink" title="提交第一个PR"></a>提交第一个PR</h1><h1 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h1><p>工作任务有个需求，需要将运营登记的报告导出到word中，然后这个word是实现同事编排好的，里面的一些内容需要进行动态替换，替换内容包裹文本图片和图标，最容易想到的就是模板替换通过占位符替换想要的内容，因为web服务是go实现的，所以找了go相关的库没有找到合适的，所以通过php的库PHPWord起了个服务来实现模板替换。</p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>通过PHPWord的官网文档使用了下<strong>Template processing</strong> 基本可以满足功能需求，但是没办法将html内容转化为word的内容，如果是图片的话直接显示空白，刚开始以为是自己使用的问题，经过几番尝试应该是库本身实现的问题，然而如果不用模板替换的话，PHPWord本身是可以将html转成实际文档内容的，于是想自己实现一个Template Processing上的方法来渲染html图片顺便提交个PR</p>
+<h1 id="阅读源码"><a href="#阅读源码" class="headerlink" title="阅读源码"></a>阅读源码</h1><p> 1.先看一个最简单的案例</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//读取模板</span></span><br><span class="line"><span class="variable">$templateProcessor</span> =  <span class="keyword">new</span> <span class="title class_">\PhpOffice\PhpWord\TemplateProcessor</span>(<span class="string">&#x27;tpl_vuln.docx&#x27;</span>);</span><br><span class="line"><span class="comment">//替换内容</span></span><br><span class="line"><span class="variable">$templateProcessor</span>-&gt;<span class="title function_ invoke__">setValue</span>(<span class="string">&quot;CompanyLogo&quot;</span>,<span class="variable">$content</span>);</span><br><span class="line"><span class="comment">//保存路径</span></span><br><span class="line"><span class="variable">$pathToSave</span> = <span class="string">&#x27;TemplateTransformed.docx&#x27;</span>;</span><br><span class="line"><span class="comment">//保存</span></span><br><span class="line"><span class="variable">$templateProcessor</span>-&gt;<span class="title function_ invoke__">saveAs</span>(<span class="variable">$pathToSave</span>);</span><br></pre></td></tr></table></figure>
+<p>2.如何读取的模板文件。</p>
+<p>刚开始看源代码的时候实际有点懵逼的，代码都看得懂但是不理解为啥要这么做，然后通过gpt查询了一下word操作的本质原理理解了其实word就是一个zip文件包，他的语法格式类似html这种文本标记语言，但是叫做openxml，操作word就是操作openxml，然后打包成zip包改下后缀名变成.docx，但是早期的word就是个二进制文件了,不在讨论范围。</p>
+<p>从TemplateProcessor构造函数中可以看出</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Temporary document content extraction</span></span><br><span class="line">  <span class="variable language_">$this</span>-&gt;zipClass = <span class="keyword">new</span> <span class="title class_">ZipArchive</span>();</span><br><span class="line">  <span class="variable language_">$this</span>-&gt;zipClass-&gt;<span class="title function_ invoke__">open</span>(<span class="variable">$this</span>-&gt;tempDocumentFilename);</span><br><span class="line">  <span class="variable">$index</span> = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">false</span> !== <span class="variable language_">$this</span>-&gt;zipClass-&gt;<span class="title function_ invoke__">locateName</span>(<span class="variable">$this</span>-&gt;<span class="title function_ invoke__">getHeaderName</span>(<span class="variable">$index</span>))) &#123;</span><br><span class="line">      <span class="variable language_">$this</span>-&gt;tempDocumentHeaders[<span class="variable">$index</span>] = <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">readPartWithRels</span>(<span class="variable">$this</span>-&gt;<span class="title function_ invoke__">getHeaderName</span>(<span class="variable">$index</span>));</span><br><span class="line">      ++<span class="variable">$index</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>3.理解word解压之后的目录结构</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[Content_Types].xml customXml           word</span><br><span class="line">_rels               docProps</span><br></pre></td></tr></table></figure>
+<p>主要文件[Content_Types].xml， 一个word又一个一个part组成，这些part的内容类型都标记在这个文件夹底下，如标记document.xml 这个文件类型。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;Override PartName=<span class="string">&quot;/word/document.xml&quot;</span> ContentType=<span class="string">&quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
+<p>还有一些标记的扩展类型等：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;Default Extension=<span class="string">&quot;xml&quot;</span> ContentType=<span class="string">&quot;application/xml&quot;</span>/&gt;</span><br><span class="line">&lt;Default Extension=<span class="string">&quot;png&quot;</span> ContentType=<span class="string">&quot;image/png&quot;</span>/&gt;</span><br></pre></td></tr></table></figure>
+<p>主要文件_rels,这个文件夹底下的.rels标记这个资源和part之间的关系，</p>
+<p>这个是_rels底下的.rels的内容</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;UTF-8&quot;</span> standalone=<span class="string">&quot;yes&quot;</span>?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">Relationships</span> <span class="attr">xmlns</span>=<span class="string">&quot;http://schemas.openxmlformats.org/package/2006/relationships&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Relationship</span> <span class="attr">Id</span>=<span class="string">&quot;rId4&quot;</span> <span class="attr">Type</span>=<span class="string">&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument&quot;</span> <span class="attr">Target</span>=<span class="string">&quot;word/document.xml&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Relationship</span> <span class="attr">Id</span>=<span class="string">&quot;rId2&quot;</span> <span class="attr">Type</span>=<span class="string">&quot;http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties&quot;</span> <span class="attr">Target</span>=<span class="string">&quot;docProps/core.xml&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Relationship</span> <span class="attr">Id</span>=<span class="string">&quot;rId1&quot;</span> <span class="attr">Type</span>=<span class="string">&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties&quot;</span> <span class="attr">Target</span>=<span class="string">&quot;docProps/app.xml&quot;</span>/&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">Relationship</span> <span class="attr">Id</span>=<span class="string">&quot;rId3&quot;</span> <span class="attr">Type</span>=<span class="string">&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships/custom-properties&quot;</span> <span class="attr">Target</span>=<span class="string">&quot;docProps/custom.xml&quot;</span>/&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">Relationships</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个标记了word/document.xml是officeDocument也可以理解为入口文件。</p>
+<p>主要文件word底下的_rels文件夹，这个文件标记了图片资源等对应的映射关系。</p>
+<p>如一张图片：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">Relationship</span> <span class="attr">Id</span>=<span class="string">&quot;rId16&quot;</span> <span class="attr">Type</span>=<span class="string">&quot;http://schemas.openxmlformats.org/officeDocument/2006/relationships/image&quot;</span> <span class="attr">Target</span>=<span class="string">&quot;media/image4.png&quot;</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<p>该xml描述了图片的路径Target在”media/image4.png”下，然后document.xml用&lt;a:blip r:embed=”rId16”/&gt;语法就可以引入图片，跟html中&lt;img src=”hptt://**.png”的方式不太一样。</p>
+<p>到此就可以基本了解ooxml的基本加载原理，其实还有很多知识点可以在官网查阅 :</p>
+<p><a target="_blank" rel="noopener" href="http://officeopenxml.com/anatomyofOOXML.php">Office Open XML - Anatomy of an OOXML WordProcessingML File</a></p>
+<p>或者直接unzip解压一个docx文件，看下目录结构自己修改应用下就知道大致原理了，目前知道这个资源加载的逻辑就可以帮助我们实现将html的图片解析导入word当中。</p>
+<p>4.继续阅读源码：</p>
+<p>在查阅资料当中有看到 Html::<em>addHtml</em> 这个官方提供的方法可以添加html元素到文档当中，但是经过我几番尝试，在TemplateProcessor这个类中都没办法正确导出图片,代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$htmlCtn</span> = <span class="string">&#x27; &lt;img  width=&quot;400&quot;  src=&quot;https://t7.baidu.com/it/u=4198287529,2774471735&amp;fm=193&amp;f=GIF&quot; /&gt;&#x27;</span>;</span><br><span class="line"><span class="variable">$table</span> = <span class="keyword">new</span> <span class="title class_">Table</span>(<span class="keyword">array</span>(<span class="string">&#x27;borderSize&#x27;</span> =&gt; <span class="number">1</span>, <span class="string">&#x27;borderColor&#x27;</span> =&gt; <span class="string">&#x27;black&#x27;</span>, <span class="string">&#x27;width&#x27;</span> =&gt; <span class="number">6000</span>, <span class="string">&#x27;unit&#x27;</span> =&gt; <span class="title class_">TblWidth</span>::<span class="variable constant_">TWIP</span>));</span><br><span class="line"><span class="variable">$table</span>-&gt;<span class="title function_ invoke__">addRow</span>();</span><br><span class="line"><span class="variable">$cell</span> = <span class="variable">$table</span>-&gt;<span class="title function_ invoke__">addCell</span>(<span class="number">300</span>);</span><br><span class="line"> <span class="title class_">Html</span>::<span class="title function_ invoke__">addHtml</span>(<span class="variable">$cell</span>, <span class="variable">$htmlCtn</span>);</span><br><span class="line"><span class="variable">$cell</span>-&gt;<span class="title function_ invoke__">addText</span>(<span class="string">&quot;1111&quot;</span>);</span><br><span class="line"><span class="variable">$templateProcessor</span> =  <span class="keyword">new</span> <span class="title class_">\PhpOffice\PhpWord\TemplateProcessor</span>(<span class="string">&#x27;tpl_vuln.docx&#x27;</span>);</span><br><span class="line"><span class="variable">$templateProcessor</span>-&gt;<span class="title function_ invoke__">setComplexBlock</span>(<span class="string">&quot;CompanyLogo&quot;</span>,  <span class="variable">$table</span> );</span><br><span class="line"><span class="variable">$pathToSave</span> = <span class="string">&#x27;TemplateTransformed.docx&#x27;</span>;</span><br><span class="line"><span class="variable">$templateProcessor</span>-&gt;<span class="title function_ invoke__">saveAs</span>(<span class="variable">$pathToSave</span>);</span><br></pre></td></tr></table></figure>
+<p>代码调用并没有报错，table的文字内容是可以输出的，但是图片就只会占用位置，不会显示图片。</p>
+<p>先拿table这个元素来说，研究了下setComplexBlock这个方法，他只是通过’PhpOffice\PhpWord\Writer\Word2007\Element\Table’这个类生成对应的ooxml内容，然后在通过XMLWriter输出，在替换document.xml的占位符。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">setComplexBlock</span>(<span class="params"><span class="variable">$search</span>, Element\AbstractElement <span class="variable">$complexType</span></span>): <span class="title">void</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="variable">$elementName</span> = <span class="title function_ invoke__">substr</span>(<span class="title function_ invoke__">get_class</span>(<span class="variable">$complexType</span>), <span class="title function_ invoke__">strrpos</span>(<span class="title function_ invoke__">get_class</span>(<span class="variable">$complexType</span>), <span class="string">&#x27;\\&#x27;</span>) + <span class="number">1</span>);</span><br><span class="line">    <span class="variable">$objectClass</span> = <span class="string">&#x27;PhpOffice\\PhpWord\\Writer\\Word2007\\Element\\&#x27;</span> . <span class="variable">$elementName</span>;</span><br><span class="line"></span><br><span class="line">    <span class="variable">$xmlWriter</span> = <span class="keyword">new</span> <span class="title class_">XMLWriter</span>();</span><br><span class="line">    <span class="comment">/** <span class="doctag">@var</span> \PhpOffice\PhpWord\Writer\Word2007\Element\AbstractElement $elementWriter */</span></span><br><span class="line">    <span class="variable">$elementWriter</span> = <span class="keyword">new</span> <span class="variable">$objectClass</span>(<span class="variable">$xmlWriter</span>, <span class="variable">$complexType</span>, <span class="literal">false</span>);</span><br><span class="line">    <span class="variable">$elementWriter</span>-&gt;<span class="title function_ invoke__">write</span>();</span><br><span class="line"></span><br><span class="line">    <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">replaceXmlBlock</span>(<span class="variable">$search</span>, <span class="variable">$xmlWriter</span>-&gt;<span class="title function_ invoke__">getData</span>(), <span class="string">&#x27;w:p&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>看完前面介绍的ooxml文档运行的资源加载原理，也就理解为什么图片一直没办法加载了，因为图片对应的资源并没有写入，图片的Relationships也没写入到.rels.xml中，那么实现图片加载的思路就是将图片资源和关系写入到zip包当中。</p>
+<h1 id="实现图片加载"><a href="#实现图片加载" class="headerlink" title="实现图片加载"></a>实现图片加载</h1><h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>我想着利用最少得代码实现功能，最好能复用原有phpword的功能,将html内容生成一个PhpWord，然后从PhpWord读取出image资源文件，写入到新的模板文件当中，在修改rels关系，这样便可以实现加载html图片。</p>
+<p>第一步：将html加载到一个新的PhpWord当中</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$phpWord</span> = <span class="keyword">new</span> <span class="title class_">PhpWord</span>();</span><br><span class="line"><span class="variable">$section</span> = <span class="variable">$phpWord</span>-&gt;<span class="title function_ invoke__">addSection</span>();</span><br><span class="line"><span class="title class_">Html</span>::<span class="title function_ invoke__">addHtml</span>(<span class="variable">$section</span>,<span class="variable">$htmlContent</span>,<span class="variable">$fullHtml</span>);</span><br></pre></td></tr></table></figure>
+<p>第二歩：将图片资源打入模板的zip中</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$obj</span> = <span class="keyword">new</span> <span class="title class_">Word2007</span>(<span class="variable">$phpWord</span>);</span><br><span class="line"><span class="variable">$refClass</span> = <span class="keyword">new</span> <span class="title class_">\ReflectionClass</span>(<span class="title class_">Word2007</span>::<span class="variable language_">class</span>);</span><br><span class="line"><span class="variable">$addFilesToPackage</span> = <span class="variable">$refClass</span>-&gt;<span class="title function_ invoke__">getMethod</span>(<span class="string">&#x27;addFilesToPackage&#x27;</span>);</span><br><span class="line"><span class="variable">$addFilesToPackage</span>-&gt;<span class="title function_ invoke__">setAccessible</span>(<span class="literal">true</span>);</span><br><span class="line"><span class="variable">$sectionMedia</span> = <span class="title class_">Media</span>::<span class="title function_ invoke__">getElements</span>(<span class="string">&#x27;section&#x27;</span>);</span><br><span class="line"><span class="comment">//add image to zip</span></span><br><span class="line"><span class="keyword">if</span> (!<span class="keyword">empty</span>(<span class="variable">$sectionMedia</span>)) &#123;</span><br><span class="line">    <span class="comment">//insert image to zip</span></span><br><span class="line">    <span class="variable">$res</span> = <span class="variable">$addFilesToPackage</span>-&gt;<span class="title function_ invoke__">invoke</span>(<span class="variable">$obj</span>,<span class="variable">$zip</span>, <span class="variable">$sectionMedia</span>);</span><br><span class="line">    <span class="variable">$registerContentTypes</span> = <span class="variable">$refClass</span>-&gt;<span class="title function_ invoke__">getMethod</span>(<span class="string">&#x27;registerContentTypes&#x27;</span>);</span><br><span class="line">    <span class="variable">$registerContentTypes</span>-&gt;<span class="title function_ invoke__">setAccessible</span>(<span class="literal">true</span>);</span><br><span class="line">    <span class="variable">$registerContentTypes</span>-&gt;<span class="title function_ invoke__">invoke</span>(<span class="variable">$obj</span>,<span class="variable">$sectionMedia</span>);</span><br><span class="line"></span><br><span class="line">    <span class="variable">$relationships</span> = <span class="variable">$refClass</span>-&gt;<span class="title function_ invoke__">getProperty</span>(<span class="string">&#x27;relationships&#x27;</span>);</span><br><span class="line">    <span class="variable">$relationships</span>-&gt;<span class="title function_ invoke__">setAccessible</span>(<span class="literal">true</span>);</span><br><span class="line">    <span class="variable">$tmpRelationships</span> = [];</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="variable">$sectionMedia</span> <span class="keyword">as</span> <span class="variable">$element</span>) &#123;</span><br><span class="line">        <span class="variable">$tmpRelationships</span>[] = <span class="variable">$element</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="variable">$relationships</span>-&gt;<span class="title function_ invoke__">setValue</span>(<span class="variable">$obj</span>,<span class="variable">$tmpRelationships</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>第三步：替换rels.xml中的关系，还有document.xml中的文本替换。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$documentWriterPart</span> = <span class="variable">$obj</span>-&gt;<span class="title function_ invoke__">getWriterPart</span>(<span class="string">&quot;Document&quot;</span>);</span><br><span class="line"><span class="variable">$relsDocumentWriterPart</span> = <span class="variable">$obj</span>-&gt;<span class="title function_ invoke__">getWriterPart</span>(<span class="string">&quot;RelsDocument&quot;</span>);</span><br><span class="line"><span class="variable">$documentXml</span> = <span class="variable">$documentWriterPart</span>-&gt;<span class="title function_ invoke__">write</span>();</span><br><span class="line"><span class="variable">$relsDocumentXml</span> = <span class="variable">$relsDocumentWriterPart</span>-&gt;<span class="title function_ invoke__">write</span>();</span><br><span class="line"><span class="comment">// Load the XML string into a SimpleXMLElement</span></span><br><span class="line"><span class="variable">$xml</span> = <span class="title function_ invoke__">simplexml_load_string</span>(<span class="variable">$documentXml</span>);</span><br><span class="line"><span class="comment">// Extract content between &lt;w:body&gt; tags</span></span><br><span class="line"><span class="variable">$bodyContent</span> = <span class="variable">$xml</span>-&gt;<span class="title function_ invoke__">xpath</span>(<span class="string">&#x27;//w:body/*&#x27;</span>);</span><br><span class="line"><span class="comment">// Output the extracted content</span></span><br><span class="line"><span class="variable">$documentBodyStr</span> = <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$bodyContent</span> <span class="keyword">as</span> <span class="variable">$element</span>) &#123;</span><br><span class="line">    <span class="variable">$documentBodyStr</span> .= <span class="variable">$element</span>-&gt;<span class="title function_ invoke__">asXML</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//replace html content r:id vaule avoid rid  conflict</span></span><br><span class="line"><span class="variable">$rIdsElement</span> =  <span class="variable">$xml</span>-&gt;<span class="title function_ invoke__">xpath</span>(<span class="string">&#x27;//*[@r:id]&#x27;</span>);</span><br><span class="line"><span class="variable">$rIdValuesMap</span> = [];</span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$rIdsElement</span>)&#123;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="variable">$rIdsElement</span> <span class="keyword">as</span> <span class="variable">$idEle</span>)&#123;</span><br><span class="line">        <span class="variable">$rid</span> = (<span class="keyword">string</span>)<span class="variable">$idEle</span>-&gt;<span class="title function_ invoke__">attributes</span>(<span class="string">&#x27;r&#x27;</span>, <span class="literal">true</span>)-&gt;id;</span><br><span class="line">        <span class="variable">$rIdValuesMap</span>[<span class="variable">$rid</span>] = <span class="variable">$rid</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (!<span class="keyword">empty</span>(<span class="variable">$rIdValuesMap</span> ))&#123;</span><br><span class="line">    <span class="keyword">foreach</span> (<span class="variable">$rIdValuesMap</span> <span class="keyword">as</span> <span class="variable">$rid</span> =&gt; <span class="variable">$value</span>)&#123;</span><br><span class="line">        <span class="variable">$replactVulue</span> = <span class="variable">$rid</span>.<span class="string">&quot;-1&quot;</span>;</span><br><span class="line">        <span class="variable">$rIdValuesMap</span>[<span class="variable">$rid</span>] = <span class="variable">$replactVulue</span>;</span><br><span class="line">        <span class="variable">$documentBodyStr</span> = <span class="title function_ invoke__">str_replace</span>(<span class="variable">$rid</span>,<span class="variable">$replactVulue</span>,<span class="variable">$documentBodyStr</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//replace document.xml</span></span><br><span class="line"><span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">replaceXmlBlock</span>(<span class="variable">$search</span>, <span class="variable">$documentBodyStr</span>, <span class="string">&#x27;w:p&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="variable">$xml</span> = <span class="title function_ invoke__">simplexml_load_string</span>(<span class="variable">$relsDocumentXml</span>);</span><br><span class="line"><span class="comment">// Register the namespace</span></span><br><span class="line"><span class="variable">$xml</span>-&gt;<span class="title function_ invoke__">registerXPathNamespace</span>(<span class="string">&#x27;ns&#x27;</span>, <span class="string">&#x27;http://schemas.openxmlformats.org/package/2006/relationships&#x27;</span>);</span><br><span class="line"><span class="comment">// Use XPath to find all Relationship nodes</span></span><br><span class="line"><span class="variable">$RelationshipXmls</span> = <span class="variable">$xml</span>-&gt;<span class="title function_ invoke__">xpath</span>(<span class="string">&#x27;//ns:Relationship&#x27;</span>);</span><br><span class="line"><span class="variable">$RelationshipStr</span> = <span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="keyword">foreach</span> (<span class="variable">$RelationshipXmls</span> <span class="keyword">as</span> <span class="variable">$relationshipXml</span>)&#123;</span><br><span class="line">    <span class="variable">$rid</span> = (<span class="keyword">string</span>)<span class="variable">$relationshipXml</span>-&gt;<span class="title function_ invoke__">attributes</span>();</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">isset</span>(<span class="variable">$rIdValuesMap</span>[<span class="variable">$rid</span>]))&#123;</span><br><span class="line">        <span class="variable">$tmpStr</span> = <span class="variable">$relationshipXml</span>-&gt;<span class="title function_ invoke__">asXML</span>();</span><br><span class="line">        <span class="variable">$tmpStr</span> = <span class="title function_ invoke__">str_replace</span>(<span class="variable">$rid</span>,<span class="variable">$rIdValuesMap</span>[<span class="variable">$rid</span>],<span class="variable">$tmpStr</span>);</span><br><span class="line">        <span class="variable">$RelationshipStr</span> .= <span class="variable">$tmpStr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//add relation to document.xml.rels</span></span><br><span class="line"><span class="keyword">if</span> (<span class="variable">$RelationshipStr</span>)&#123;</span><br><span class="line">    <span class="variable">$relsFileName</span> = <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">getRelationsName</span>(<span class="variable">$this</span>-&gt;<span class="title function_ invoke__">getMainPartName</span>());</span><br><span class="line">    <span class="variable">$content</span> = <span class="variable language_">$this</span>-&gt;tempDocumentRelations[<span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">getMainPartName</span>()];</span><br><span class="line">    <span class="variable">$endStr</span> = <span class="string">&quot;&lt;/Relationships&gt;&quot;</span>;</span><br><span class="line">    <span class="variable">$replaceValue</span> = <span class="variable">$RelationshipStr</span>.<span class="variable">$endStr</span>;</span><br><span class="line">    <span class="variable">$content</span> = <span class="title function_ invoke__">str_replace</span>(<span class="variable">$endStr</span>,<span class="variable">$replaceValue</span>,<span class="variable">$content</span>);</span><br><span class="line">    <span class="variable language_">$this</span>-&gt;tempDocumentRelations[<span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">getMainPartName</span>()] = <span class="variable">$content</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>逻辑不算复杂，比较难得是理解业务逻辑，在通过反射调用一些Word2007私有方法，在替换一下文本字符串，即可实现最终的图片加载。</p>
+<h1 id="提交PR"><a href="#提交PR" class="headerlink" title="提交PR"></a>提交PR</h1><p>经过测试功正常满足需求，于是fork了phpword的官方仓库，在创建一个新的分支修改代码之后push到远程分支，这样就能创建一个pr，具体的操作流程网上已经有很多文章写的很好了，就不在重复了。</p>
+<p>这个是我提交的PR  <a target="_blank" rel="noopener" href="https://github.com/PHPOffice/PHPWord/pull/2547">https://github.com/PHPOffice/PHPWord/pull/2547</a>  目前还没被合并，有和贡献者讨论了一些问题，但是仓库的管理员过了好久都还没review，但是有需要的小伙伴可以直接拉取这个分支实现功能。</p>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>还有一些TemplateProcessor使用过程中的问题，官方文档没有详细解释，通过stackoverflow最终找到解决方法记录一下。</p>
+<p>问题1：TemplateProcessor 中的setValue文本中如果存在\n没办法换行</p>
+<p>将\n替换为<br>即可，$ctn = str_replace(”\n”,”</br>”,$ctn)</p>
+<p>问题2： Html::addHtml($cell, $htmlCtn);这个方法添加的图片没办法设置宽高，设置了也不生效。</p>
+<p>其实是支持宽高的，只是不用填写单位， <img width=”600” > 把单位去掉即可。</p>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://tachyons.io/img/avatar_1.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="CodeSphinx">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is Jonathan Klughertz and this is my blog.<br>I am a full stack software engineer with a strong front-end focus.<br> I currently live and work in Singapore, hit me up if you are in the region.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2024/01/29/firt-pr/">firt_pr</a>
+        </p>
+    
+        <p>
+            <a href="/2023/12/20/CodeSphinx/">CodeSphinx</a>
+        </p>
+    
+        <p>
+            <a href="/2023/12/20/post/">post</a>
+        </p>
+    
+        <p>
+            <a href="/2021/01/17/hello-world/">Hello World</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://twitter.com" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.facebook.com/" target="_blank">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/Maybe-U" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/Maybe-U" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/Maybe-U" target="_blank">
+                            <i class="fa fa-google-plus"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://www.behance.net/" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://500px.com/" target="_blank">
+                            <i class="fa fa-500px"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:test@example.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="/#" target="_blank">
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                @Untitled. All right reserved | Design By  CodeSphinx </a>
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
