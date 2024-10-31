@@ -29,7 +29,7 @@
     
 
     <!--Open Graph Site Name-->
-    <meta property="og:site_name" content="Hexo"/>
+    <meta property="og:site_name" content="SphinxH"/>
 
     <!--Type page-->
     
@@ -44,7 +44,7 @@
 
     <!-- Title -->
     
-    <title>提交第一个PR - Hexo</title>
+    <title>提交第一个PR - SphinxH</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="https://unpkg.com/tachyons/css/tachyons.min.css">
@@ -79,8 +79,8 @@
 <div class="w-100 bg-1 ph5-ns ph3 text-light">
     
     <nav class="db dt-l w-100 mw8 center border-box pv3">
-        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="Hexo">
-            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="Hexo">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="SphinxH">
+            <img src="http://www.codeblocq.com/assets/projects/hexo-theme-anodyne/assets/anodyne.svg" class="dib h3" alt="SphinxH">
         </a>
         <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
             
@@ -127,7 +127,7 @@
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
             <h1 class="f1-l f2-m tc tc-m tl-ns">提交第一个PR</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2024-01-29</p>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">2023-12-10</p>
         </div>
     </div>
 
@@ -191,9 +191,9 @@
 <p>这个是我提交的PR  <a target="_blank" rel="noopener" href="https://github.com/PHPOffice/PHPWord/pull/2547">https://github.com/PHPOffice/PHPWord/pull/2547</a>  目前还没被合并，有和贡献者讨论了一些问题，但是仓库的管理员过了好久都还没review，但是有需要的小伙伴可以直接拉取这个分支实现功能。</p>
 <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>还有一些TemplateProcessor使用过程中的问题，官方文档没有详细解释，通过stackoverflow最终找到解决方法记录一下。</p>
 <p>问题1：TemplateProcessor 中的setValue文本中如果存在\n没办法换行</p>
-<p>将\n替换为<br>即可，$ctn = str_replace(”\n”,”</br>”,$ctn)</p>
+<p>将\n替换为<br>即可，$ctn = str_replace(”\n”,”<br>”,$ctn)</p>
 <p>问题2： Html::addHtml($cell, $htmlCtn);这个方法添加的图片没办法设置宽高，设置了也不生效。</p>
-<p>其实是支持宽高的，只是不用填写单位， <img width=”600” > 把单位去掉即可。</p>
+<p>其实是支持宽高的，只是不用填写单位， <img width="”600”"> 把单位去掉即可。</p>
 
                     
                     <!-- Tags Bottom -->
@@ -231,19 +231,15 @@
     <h3>Recent Posts</h3>
     
         <p>
-            <a href="/2024/01/29/firt-pr/">提交第一个PR</a>
+            <a href="/2024/01/29/GNS3/">GNS3模拟器搭建与学习</a>
         </p>
     
         <p>
-            <a href="/2023/12/20/CodeSphinx/">CodeSphinx</a>
+            <a href="/2023/12/20/CodeSphinx/">2fa验证码自动填充</a>
         </p>
     
         <p>
-            <a href="/2023/12/20/post/">post</a>
-        </p>
-    
-        <p>
-            <a href="/2021/01/17/hello-world/">Hello World</a>
+            <a href="/2023/12/10/firt-pr/">提交第一个PR</a>
         </p>
     
 </div>
